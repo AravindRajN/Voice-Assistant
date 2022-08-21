@@ -8,7 +8,7 @@ def finder():
     for root, dirs, files in os.walk(dir_path):
         for file in files:
             try:
-                if file.endswith('call.exe'):
+                if file.endswith('main.exe'):
                     c=dir=root+'@'+str(file)
                     d=c.replace('@',a)
                     c=[]
@@ -25,7 +25,7 @@ def on_press(key):
             processName = proc.name()
             L.append(processName)
         if "call.exe" in L:
-            os.system("taskkill /im call.exe /f")
+            os.system("taskkill /im main.exe /f")
         else:
             os.startfile(finder())
 
